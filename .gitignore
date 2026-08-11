@@ -1,0 +1,14 @@
+# PlatformIO
+.pio/
+.vscode/
+
+# Logs com dados capturados (nunca subir)
+data/logs.txt
+
+# Builds
+*.bin
+*.elf
+
+# Sistema
+.DS_Store
+Thumbs.db

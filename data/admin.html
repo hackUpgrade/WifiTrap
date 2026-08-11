@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Admin — ESP32</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <main class="admin">
+    <header class="admin-header">
+      <h1>ESP32 CAPTIVE PORTAL</h1>
+      <span>ADMIN LOCAL</span>
+    </header>
+
+    <section class="status-card">
+      <strong>Status:</strong> ONLINE
+    </section>
+
+    <section class="logs-section">
+      <div class="section-title">
+        <h2>Logs</h2>
+        <div>
+          <button onclick="loadLogs()">Atualizar</button>
+          <button onclick="clearLogs()">Limpar logs</button>
+          <a class="button small" href="/logs.txt">Baixar logs.txt</a>
+        </div>
+      </div>
+      <pre id="logs">Carregando...</pre>
+    </section>
+  </main>
+
+  <script>
+    async function loadLogs() {
+      const r = await fetch('/logs.txt');
+      document.getElementById('logs').textContent = await r.text() || 'Nenhum evento registrado.';
+    }
+    async function clearLogs() {
+      if (!confirm('Limpar os logs?')) return;
+      await fetch('/clear-logs', {method:'POST'});
+      loadLogs();
+    }
+    loadLogs();
+  </script>
+</body>
+</html>
