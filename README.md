@@ -1,6 +1,8 @@
-# ESP32 Captive Portal
+# WifiTrap - simple captive portal with ESP32
+> plug and play
 
-Captive portal para ESP32 (Arduino framework) que simula uma tela de conexão à rede com login por Google, Facebook ou Instagram. Qualquer dispositivo que se conectar ao ponto de acesso é redirecionado automaticamente para o portal.
+O dispositivo cria uma rede Wi-Fi aberta, sem senha, qual o usuário pode se conectar. Após a conexão, ele é redirecionado para um captive portal de autenticação, onde são apresentadas opções de acesso como Google, Facebook ou Instagram. O email, senha e demais informações são armazenadas localmente em um arquivo .txt no ESP32.
+
 
 > **Aviso ético / Ethical notice**
 > Projeto educacional para demonstrar como funcionam redes de convidados (guest networks) e captive portals. Use apenas em rede própria ou em ambientes autorizados (testes de segurança com permissão). Não use para coletar dados de terceiros.
@@ -12,10 +14,8 @@ Captive portal para ESP32 (Arduino framework) que simula uma tela de conexão à
 - Rede Wi-Fi aberta com redirecionamento automático de dispositivos (DNS captive portal)
 - Tela inicial com escolha do método de login: **Google**, **Facebook** ou **Instagram**
 - Página de login exclusiva para cada rede, com visual e marca próprios (frontend apenas, nenhuma autenticação real é feita)
-- Fluxo de login do Google em duas etapas (e-mail → senha), como na versão real
 - Registro de eventos em `logs.txt` (LittleFS): horário, IP, provedor, e-mail, sistema operacional (via User-Agent) e ação
 - Painel administrativo em `/admin` para consultar e limpar os logs
-- Detecção do sistema operacional do cliente (Windows, Android, iOS, macOS, Linux)
 
 ## Fluxo / Flow
 
@@ -67,8 +67,6 @@ Exemplo de linha de log:
 Tue, 11 Aug 2026 14:33:22 GMT | ip=192.168.4.5 | provider=Google | email=usuario@gmail.com | password=******** | os=Windows | action=submit
 ```
 
-> A senha é gravada apenas em ambiente controlado — em produção, evite armazenar credenciais.
-
 ## Estrutura / Structure
 
 ```
@@ -92,7 +90,6 @@ Tue, 11 Aug 2026 14:33:22 GMT | ip=192.168.4.5 | provider=Google | email=usuario
 
 - C++ (Arduino framework) · ESP32 · WiFi AP + DNSServer + WebServer · LittleFS
 - HTML/CSS puro (SVG inline, sem dependências externas)
-
 ---
 
 ## License
