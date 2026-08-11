@@ -4,7 +4,7 @@
 O dispositivo cria uma rede Wi-Fi aberta, sem senha, qual o usuário pode se conectar. Após a conexão, ele é redirecionado para um captive portal de autenticação, onde são apresentadas opções de acesso como Google, Facebook ou Instagram. O email, senha e demais informações são armazenadas localmente em um arquivo .txt no ESP32.
 
 
-> **Aviso ético / Ethical notice**
+> **Aviso ético **
 > Projeto educacional para demonstrar como funcionam redes de convidados (guest networks) e captive portals. Use apenas em rede própria ou em ambientes autorizados (testes de segurança com permissão). Não use para coletar dados de terceiros.
 
 ---
@@ -64,7 +64,7 @@ Device conecta no AP "ESP32-Portal-Demo"
 Exemplo de linha de log:
 
 ```
-Tue, 11 Aug 2026 14:33:22 GMT | ip=192.168.4.5 | provider=Google | email=usuario@gmail.com | password=******** | os=Windows | action=submit
+Tue, 11 Aug 2026 14:33:22 GMT | ip=192.168.4.5 | provider=Instagram | email=alienigena@gmail.com | password=abacate123 | os=Android | action=submit
 ```
 
 ## Estrutura / Structure
